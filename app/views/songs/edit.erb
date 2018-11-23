@@ -5,6 +5,7 @@
 
    
  <% Genre.all.each do |g|%>
+ <%binding.pry%>
    <input type="checkbox" name="genres[]" value="<%=g.id%>" id="<%=g.name%>">
 <%end%>
 
