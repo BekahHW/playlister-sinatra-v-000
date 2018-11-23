@@ -19,7 +19,6 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-
     # @songs = Song.create(params[:name])
      @songs = Song.create(:name => params['name'])
      @songs.artist = Artist.find_or_create_by(:name => params['artist name'])
