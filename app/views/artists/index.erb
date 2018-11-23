@@ -1,3 +1,4 @@
 <% @artist.all.each do |a| %>
-<a href= 'artists/<%= a.id%>/show'><%= a.name %></a>
+<a href= '/artists/<%= a.slug%>'><%= a.name %></a>
 <% end %>
+

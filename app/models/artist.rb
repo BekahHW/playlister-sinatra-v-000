@@ -1,12 +1,14 @@
+require 'pry'
 class Artist < ActiveRecord::Base
   has_many :songs
   has_many :genres, :through => :songs
   
-  def slug(str)
-      str.strip.downcase.gsub /\W+/, '-'  
+  def slug
+    name.downcase.gsub(" ", "-")  
   end
   
-  def find_by_slug
-    
+  def self.find_by_slug(slug)
+    self.all.find{|a| a.slug == slug}
   end
+  
 end
